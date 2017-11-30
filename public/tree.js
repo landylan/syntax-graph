@@ -111,8 +111,8 @@ function drawTree(svgElement, data) {
     
     edges = svg.selectAll('.edge').data(data).enter()
     .append('path')
-    .filter(function(d) { return !d.root } )
 		.attr('class', function(d,i) { return `edge w${i} w${d.parent}`})
+    .filter(function(d) { return !d.root } )
     .attr('d', function(d) 
       { return `M${d.left},${d.bottom} `+     // moveto
                `C${d.mid-d.diff},${d.top} `+  // Bezier Curve
